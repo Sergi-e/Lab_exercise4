@@ -1,11 +1,11 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TreeMap;
 import java.util.List;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class ClinicManagementSystem implements FileOperations, ReportGenerator {
 
@@ -136,10 +136,10 @@ public class ClinicManagementSystem implements FileOperations, ReportGenerator {
     public void loadAppointmentsFromFile(String filename) {
         try {
             File f = new File(filename);
-            Scanner sc = new Scanner(f);
+            Scanner scan = new Scanner(f);
 
-            while (sc.hasNextLine()) {
-                String line = sc.nextLine();
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
                 String[] parts = line.split(",");
 
                 int patientId = Integer.parseInt(parts[0]);
@@ -159,7 +159,7 @@ public class ClinicManagementSystem implements FileOperations, ReportGenerator {
                 appointmentsByDate.get(date).add(ap);
             }
 
-            sc.close();
+            scan.close();
 
         } catch (Exception e) {
             System.out.println("Could not load appointments.");
