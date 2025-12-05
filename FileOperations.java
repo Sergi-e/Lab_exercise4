@@ -1,6 +1,9 @@
 public interface FileOperations {
-    void saveToFile(String filename) throws IOException;
-    void loadFromFile(String filename) throws IOException;
+    // Saves system data to a text file
+    public void saveToFile(String filename);
+
+    // Loads system data from a text file
+    public void loadFromFile(String filename);
 }
 
 
