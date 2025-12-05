@@ -1,5 +1,8 @@
 public interface ReportGenerator {
-    String generatePatientReport(int patientId);
-    String generateDailyAppointments(String date);
+   // Creates a summary of all stored patient records
+    public void generatePatientReport();
+
+    // Creates a summary of all scheduled appointments
+    public void generateAppointmentReport();
     
 }
